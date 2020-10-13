@@ -48,9 +48,14 @@ Html & CSS code completion is copied from [vscode-extension-samples](https://git
 
 ### Release Notes
 
-#### 0.0.1
+#### 12/10/20 (1.0.1)
+
+Update Repository
+
+#### 12/10/20 (1.0.0)
 
 Initial release of qtpl
+
 
 [^regex]: Regex: /^ +("([A-z ]+)": {\n) +("prefix": "([A-z0-9\{% ]+)",\n) +("body": (.*)\n) +(},?)/gm
   Replacer: | $4 | $6 |
