@@ -1,0 +1,70 @@
+{
+    "name": "quicktemplate.vscode",
+    "displayName": "QuickTemplate",
+    "description": "Syntax Highlighting and code (go/html/css) completion for valyala/quicktemplate",
+    "author": "JDinABox",
+    "publisher": "jdinabox",
+	"license": "MIT",
+    "version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-extension-samples"
+	},
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "activationEvents": [
+        "onLanguage:qtpl"
+    ],
+    "main": "./client/out/extension",
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "qtpl",
+                "aliases": [
+                    "QTPL",
+                    "qtpl"
+                ],
+                "extensions": [
+                    ".qtpl"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "qtpl",
+                "scopeName": "source.qtpl",
+                "path": "./syntaxes/qtpl.tmLanguage.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.html": "html",
+                    "meta.embedded.block.go": "go"
+                }
+            }
+        ],
+        "snippets": [
+            {
+                "language": "qtpl",
+                "path": "./snippets/qtpl.json"
+            }
+        ]      
+    },
+    "scripts": {
+        "vscode:prepublish": "cd client && npm install && cd .. && npm run compile",
+        "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
+        "test": "sh ./scripts/e2e.sh",
+        "compile": "tsc -b",
+        "development": "tsc -b -w"
+    },
+    "devDependencies": {
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^12.12.0",
+        "@typescript-eslint/eslint-plugin": "^4.4.0",
+        "@typescript-eslint/parser": "^4.4.0",
+        "eslint": "^7.1.0",
+        "typescript": "^4.0.2"
+    }
+}
