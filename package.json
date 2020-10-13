@@ -5,10 +5,10 @@
     "author": "JDinABox",
     "publisher": "jdinabox",
 	"license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.2",
 	"repository": {
 		"type": "git",
-		"url": "https://marketplace.visualstudio.com/items?itemName=jdinabox.quicktemplate-vscode"
+		"url": "https://github.com/JDinABox/quicktemplate.vscode"
 	},
     "engines": {
         "vscode": "^1.50.0"
