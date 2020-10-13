@@ -48,6 +48,10 @@ Html & CSS code completion is copied from [vscode-extension-samples](https://git
 
 ### Release Notes
 
+#### 13/10/20 (1.0.2)
+
+Update Repository... Again
+
 #### 12/10/20 (1.0.1)
 
 Update Repository
