@@ -1,5 +1,5 @@
 {
-    "name": "quicktemplate.vscode",
+    "name": "quicktemplate-vscode",
     "displayName": "QuickTemplate",
     "description": "Syntax Highlighting and code (go/html/css) completion for valyala/quicktemplate",
     "author": "JDinABox",
