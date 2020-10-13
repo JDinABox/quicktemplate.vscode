@@ -1,0 +1,141 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "QTPL",
+	"patterns": [
+		{"include": "#qtpl-tags"}
+	],
+	"repository": {
+		"qtpl-tags": {
+			"patterns": [
+				{"include": "#func"},
+				{"include": "#has-go"}
+			]
+		},
+		"func": {
+			"begin": "{% func [A-z0-9\\(\\)*&., ]+%}",
+			"beginCaptures": {
+				"0": {
+					"patterns": [{"include": "#go"}]
+				}
+			},
+			"captures": {
+				"0": {
+					"patterns": [{"include": "#embedded-section"}]
+				}
+			},
+			"end": "{% endfunc %}",
+			"patterns": [
+				{"include": "#has-html"},
+				{"include": "#plain"},
+				{"include": "#has-go"}
+			]
+		},
+		"plain": {
+			"begin": "{% plain %}",
+			"captures": {
+				"0": {
+					"patterns": [{"include": "#embedded-section"}]
+				}
+			},
+			"end": "{% endplain %}",
+			"patterns": [
+				{"include": "#has-html"}
+			]
+		},
+		"strip-collapse-space": {
+			"begin": "{% (collapse|strip)space %}",
+			"captures": {
+				"0": {
+					"patterns": [{"include": "#embedded-section"}]
+				}
+			},
+			"end": "{% end(collapse|strip)space %}",
+			"patterns": [
+				{"include": "#has-html"},
+				{"include": "#has-go"}
+			]
+		},
+		"has-html": {
+			"name": "meta.embedded.block.html",
+			"patterns": [
+				{"include": "text.html.basic"}
+			]
+		},
+		"has-go" : {
+			"patterns": [
+				{"include": "#comment-block"},
+				{"include": "#cat-tag"},
+				{"include": "#go"}
+			]
+		},
+		"go": {
+			"name": "meta.embedded.block.go",
+			"begin": "{%(s|(du?l?)|(f(\\.[0-9]+)?)|z|((q|j|u)z?)|v|-)?=?(h|(u|q|j)()h?)?",
+			"captures": {
+				"0": {
+					"patterns": [{"include": "#embedded-section"}]
+				}
+			},
+			"end": "(-)?%}",
+			"patterns": [
+				{"include": "#comment-block"},
+				{"include": "source.go"},
+				{"include": "#keywords"}
+			]
+		},
+		"cat-tag": {
+			"begin": "({%) (cat)",
+			"captures": {
+				"0": {
+					"patterns": [{"include": "#embedded-section"}]
+				}
+			},
+			"end": "%}",
+			"patterns": [
+				{"include": "#strings"}
+			]
+		},
+		"comment-block": {
+			"name": "comment.block.qtpl",
+			"begin": "{% comment %}",
+			"end": "{% endcomment %}"
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.qtpl",
+					"match": "\\b(code|case|(else(if)?)|((end)?(plain|func|((collapse|strip)space|if|switch|for))))\\b"
+				},
+				{
+					"name": "keyword.control.import.qtpl",
+					"match": "\\bcat\\b"
+				}
+			]
+		},
+		"embedded-section": {
+			"patterns": [
+				{
+					"name": "punctuation.section.embedded.begin.qtpl",
+					"match": "{%(s|(du?l?)|(f(\\.[0-9]+)?)|z|((q|j|u)z?)|v|-)?=?(h|(u|q|j)()h?)?"
+				},
+				{
+					"name": "punctuation.section.embedded.end.qtpl",
+					"match": "(-)?%}"
+				},
+				{"include": "#keywords"}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.qtpl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.qtpl",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.qtpl"
+}
