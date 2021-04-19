@@ -31,25 +31,25 @@
 			]
 		},
 		"plain": {
-			"begin": "{% plain %}",
+			"begin": "{%(-)? plain (-)?%}",
 			"captures": {
 				"0": {
 					"patterns": [{"include": "#embedded-section"}]
 				}
 			},
-			"end": "{% endplain %}",
+			"end": "{%(-)? endplain (-)?%}",
 			"patterns": [
 				{"include": "#has-html"}
 			]
 		},
 		"strip-collapse-space": {
-			"begin": "{% (collapse|strip)space %}",
+			"begin": "{%(-)? (collapse|strip)space (-)?%}",
 			"captures": {
 				"0": {
 					"patterns": [{"include": "#embedded-section"}]
 				}
 			},
-			"end": "{% end(collapse|strip)space %}",
+			"end": "{%(-)? end(collapse|strip)space (-)?%}",
 			"patterns": [
 				{"include": "#has-html"},
 				{"include": "#has-go"}
@@ -70,7 +70,7 @@
 		},
 		"go": {
 			"name": "meta.embedded.block.go",
-			"begin": "{%(s|(du?l?)|(f(\\.[0-9]+)?)|z|((q|j|u)z?)|v|-)?=?(h|(u|q|j)()h?)?",
+			"begin": "{%(-)?(s|(du?l?)|(f(\\.[0-9]+)?)|z|((q|j|u)z?)|v|-)?=?(h|(u|q|j)()h?)?",
 			"captures": {
 				"0": {
 					"patterns": [{"include": "#embedded-section"}]
@@ -84,21 +84,21 @@
 			]
 		},
 		"cat-tag": {
-			"begin": "({%) (cat)",
+			"begin": "({%(-)?) (cat)",
 			"captures": {
 				"0": {
 					"patterns": [{"include": "#embedded-section"}]
 				}
 			},
-			"end": "%}",
+			"end": "(-)?%}",
 			"patterns": [
 				{"include": "#strings"}
 			]
 		},
 		"comment-block": {
 			"name": "comment.block.qtpl",
-			"begin": "{% comment %}",
-			"end": "{% endcomment %}"
+			"begin": "{%(-)? comment (-)?%}",
+			"end": "{%(-)? endcomment (-)?%}"
 		},
 		"keywords": {
 			"patterns": [
@@ -116,7 +116,7 @@
 			"patterns": [
 				{
 					"name": "punctuation.section.embedded.begin.qtpl",
-					"match": "{%(s|(du?l?)|(f(\\.[0-9]+)?)|z|((q|j|u)z?)|v|-)?=?(h|(u|q|j)()h?)?"
+					"match": "{%(-)?(s|(du?l?)|(f(\\.[0-9]+)?)|z|((q|j|u)z?)|v|-)?=?(h|(u|q|j)()h?)?"
 				},
 				{
 					"name": "punctuation.section.embedded.end.qtpl",
