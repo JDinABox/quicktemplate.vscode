@@ -4,12 +4,12 @@
     "description": "Syntax Highlighting and code (go/html/css) completion for valyala/quicktemplate",
     "author": "JDinABox",
     "publisher": "jdinabox",
-	"license": "MIT",
-    "version": "1.0.2",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/JDinABox/quicktemplate.vscode"
-	},
+    "license": "MIT",
+    "version": "1.1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JDinABox/quicktemplate.vscode"
+    },
     "engines": {
         "vscode": "^1.50.0"
     },
@@ -50,7 +50,7 @@
                 "language": "qtpl",
                 "path": "./snippets/qtpl.json"
             }
-        ]      
+        ]
     },
     "scripts": {
         "vscode:prepublish": "cd client && npm install && cd .. && npm run compile",
