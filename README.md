@@ -36,7 +36,7 @@ Note: From snippets/qtpl.json file [^regex]
 | import | "{% import \"$0\" %}" |
 | interface | ["{% interface ${1:name} {", "\t$0", "} %}"] |
 | switch | ["{% switch $1 %}", "{% case $2 %}","$0","${3:{% default %\\}\n}","{% endswitch %}"] |
-| stripspace | ["{% stripspace %}", "\t$0", "{% stripspace %}"] |
+| stripspace | ["{% stripspace %}", "\t$0", "{% endstripspace %}"] |
 
 ## Known Issues
 

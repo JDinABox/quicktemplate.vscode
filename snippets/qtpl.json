@@ -57,6 +57,6 @@
     },
     "Strip Space": {
         "prefix": "stripspace",
-        "body": ["{% stripspace %}", "\t$0", "{% stripspace %}"]
+        "body": ["{% stripspace %}", "\t$0", "{% endstripspace %}"]
     }
 }
