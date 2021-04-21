@@ -11,6 +11,7 @@
     // symbols that are auto closed when typing
     "autoClosingPairs": [
         ["{% ", " %}"],
+        ["{%- ", " -%}"],
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
@@ -19,6 +20,7 @@
     // symbols that can be used to surround a selection
     "surroundingPairs": [
         ["{%", "%}"],
+        ["{%-", "-%}"],
         ["{", "}"],
         ["[", "]"],
         ["(", ")"],
