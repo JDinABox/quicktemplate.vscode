@@ -48,6 +48,17 @@ Html & CSS code completion is copied from [vscode-extension-samples](https://git
 
 ### Release Notes
 
+#### 20/4/21 (1.1.0)
+
+Add:
+
+- Optional trim whitespace modifier(-) to syntax ([#1](https://github.com/JDinABox/quicktemplate.vscode/pull/1)) [@muthukrishnan24](https://github.com/muthukrishnan24)
+
+Fix
+
+- Stripspace snippet
+
+
 #### 13/10/20 (1.0.2)
 
 Update Repository... Again
